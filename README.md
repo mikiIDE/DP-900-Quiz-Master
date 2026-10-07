@@ -26,7 +26,8 @@ dotnet run --project DP900AppleQuiz/DP900AppleQuiz.csproj
 
 ## Azure 無料枠向けデプロイ（Static Web Apps）
 
-このリポジトリには `.github/workflows/azure-static-web-apps.yml` を用意済みです。
+Static Web Apps 作成時に Azure が GitHub Actions ワークフロー
+（`.github/workflows/azure-static-web-apps-*.yml`）を自動作成します。
 
 1. Azure ポータルで **Static Web Apps** を新規作成（Free プラン）
 2. デプロイ元に `mikiIDE/DP-900-Quiz-Master` を指定し、ブランチは `main`
@@ -34,5 +35,6 @@ dotnet run --project DP900AppleQuiz/DP900AppleQuiz.csproj
    - App location: `DP900AppleQuiz`
    - Api location: （空）
    - Output location: `wwwroot`
-4. 作成後、GitHub Secrets に `AZURE_STATIC_WEB_APPS_API_TOKEN` を登録
+4. 作成後、自動生成されたシークレット
+   `AZURE_STATIC_WEB_APPS_API_TOKEN_<APP_NAME>_<ID>` が使われる
 5. `main` に push すると GitHub Actions が自動デプロイ
