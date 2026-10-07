@@ -14,6 +14,8 @@ Copilot に作ってもらう DP-900 クイズ
 
 `DP900AppleQuiz/` に C#（Blazor WebAssembly）版のクイズゲームがあります。
 
+公開 URL: https://black-moss-079c49000.5.azurestaticapps.net
+
 - 不正解または時間切れでリンゴが 1 段階ずつ齧られる
 - 5 回ミスでゲームオーバー
 - 全問回答でクリア
@@ -38,3 +40,7 @@ Static Web Apps 作成時に Azure が GitHub Actions ワークフロー
 4. 作成後、自動生成されたシークレット
    `AZURE_STATIC_WEB_APPS_API_TOKEN_<APP_NAME>_<ID>` が使われる
 5. `main` に push すると GitHub Actions が自動デプロイ
+
+### トラブルメモ
+
+- その後の失敗は **PRクローズ時ジョブの設計ミスマッチ**
