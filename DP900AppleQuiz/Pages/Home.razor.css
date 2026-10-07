@@ -1,0 +1,94 @@
+.game-shell {
+    max-width: 780px;
+}
+
+.status-bar {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(110px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.status-bar > div {
+    background: #f5f6fb;
+    border-radius: 10px;
+    padding: 0.6rem 0.8rem;
+}
+
+.timer {
+    color: #b93025;
+}
+
+.apple {
+    width: 220px;
+    max-width: 100%;
+    margin: 0.4rem 0 1rem;
+}
+
+.question-card {
+    background: #fff;
+    border: 1px solid #e4e7ee;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.question-text {
+    font-size: 1.08rem;
+    margin-bottom: 1rem;
+}
+
+.choices {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.choice {
+    text-align: left;
+    border: 1px solid #ccd4e4;
+    background: #fdfdff;
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+}
+
+.choice:hover:enabled {
+    border-color: #5f86ff;
+    background: #f1f5ff;
+}
+
+.choice-key {
+    font-weight: 700;
+    margin-right: 0.3rem;
+}
+
+.feedback {
+    margin-top: 0.9rem;
+    font-weight: 600;
+}
+
+.result {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0.6rem 0 1rem;
+}
+
+.result.win {
+    color: #1c7e46;
+}
+
+.result.lose {
+    color: #b93025;
+}
+
+.primary {
+    background: #1f6feb;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.65rem 0.95rem;
+}
+
+@media (max-width: 780px) {
+    .status-bar {
+        grid-template-columns: repeat(2, minmax(110px, 1fr));
+    }
+}
