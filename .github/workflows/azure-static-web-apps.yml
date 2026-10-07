@@ -1,0 +1,34 @@
+name: Deploy Blazor app to Azure Static Web Apps
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "DP900AppleQuiz/**"
+      - ".github/workflows/azure-static-web-apps.yml"
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Publish Blazor WebAssembly
+        run: dotnet publish DP900AppleQuiz/DP900AppleQuiz.csproj -c Release -o publish
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: "publish/wwwroot"
+          skip_app_build: true
