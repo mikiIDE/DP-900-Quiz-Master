@@ -14,6 +14,8 @@ Copilot に作ってもらう DP-900 クイズ
 
 `DP900AppleQuiz/` に C#（Blazor WebAssembly）版のクイズゲームがあります。
 
+公開 URL: https://black-moss-079c49000.5.azurestaticapps.net
+
 - 不正解または時間切れでリンゴが 1 段階ずつ齧られる
 - 5 回ミスでゲームオーバー
 - 全問回答でクリア
